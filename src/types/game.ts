@@ -1,6 +1,26 @@
 export type GameStatus="LOBBY"|"QUESTION"|"ROUND_RESULT"|"LEADERBOARD"|"FINISHED";
-export type InputType="number"|"integer"|"duration";export type DurationFormat="mm:ss"|"hh:mm"|"hh:mm:ss";
-export interface Question{id:string;category:string;text:string;answer:number;inputType:InputType;unit?:string;durationFormat?:DurationFormat;explanation?:string;}
+export type InputType="number"|"integer"|"duration";
+export type DurationFormat="mm:ss"|"hh:mm"|"hh:mm:ss";
+
+export interface QuestionSource {
+  label: string;
+  url: string;
+  year?: number;
+}
+
+export interface Question {
+  id: string;
+  category: string;
+  text: string;
+  answer: number;
+  inputType: InputType;
+  unit?: string;
+  durationFormat?: DurationFormat;
+  explanation?: string;
+  tags?: string[];
+  source?: QuestionSource;
+}
+
 export interface Player{id:string;name:string;totalScore:number;connected:boolean;isHost:boolean;}
 export interface SubmittedAnswer{playerId:string;questionId:string;value:number;submittedAt:number;responseTimeMs:number;}
 export interface RankedAnswer extends SubmittedAnswer{deviation:number;rank:number;points:number;}
