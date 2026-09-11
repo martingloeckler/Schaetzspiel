@@ -1,0 +1,2 @@
+const DEFAULT_ALPHABET="ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+export function createJoinCode(length=4,random:()=>number=Math.random,alphabet=DEFAULT_ALPHABET):string{if(!Number.isInteger(length)||length<=0)throw new Error("Join code length must be a positive integer.");if(alphabet.length<2)throw new Error("Join code alphabet must contain at least two characters.");let code="";for(let i=0;i<length;i++)code+=alphabet[Math.floor(random()*alphabet.length)];return code;}

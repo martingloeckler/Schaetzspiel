@@ -1,0 +1,1 @@
+"use client";import{useEffect,useState}from"react";export function Countdown({endsAt}:{endsAt:number}){const[left,setLeft]=useState(0);useEffect(()=>{const tick=()=>setLeft(Math.max(0,Math.ceil((endsAt-Date.now())/1000)));tick();const id=setInterval(tick,200);return()=>clearInterval(id)},[endsAt]);return <div className="timer">{left}</div>}

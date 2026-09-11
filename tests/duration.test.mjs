@@ -1,0 +1,1 @@
+import test from"node:test";import assert from"node:assert/strict";import{formatDuration,parseDuration}from"../dist/game/duration.js";test("duration",()=>{assert.equal(parseDuration(["12","34"],"mm:ss"),754);assert.equal(parseDuration(["2","31","05"],"hh:mm:ss"),9065);assert.equal(parseDuration(["1","60"],"mm:ss"),null);assert.equal(formatDuration(9065,"hh:mm:ss"),"2:31:05")});

@@ -1,0 +1,1 @@
+import test from"node:test";import assert from"node:assert/strict";import{createJoinCode}from"../dist/game/game-code.js";test("join code",()=>{const c=createJoinCode(4,()=>0);assert.equal(c,"AAAA");assert.ok(!/[0OIL1]/.test(c))});
