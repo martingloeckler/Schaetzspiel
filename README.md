@@ -26,7 +26,7 @@ Der aktuelle Stand enthält:
 
 ## Entwicklung
 
-Voraussetzung: Node.js >= 20.9.
+Voraussetzung: Node.js >= 22.23.4 und < 23. Render verwendet Node.js 22.23.4.
 
 ```bash
 npm install
